@@ -8,46 +8,40 @@ namespace Cadiro
 {
     public class NinjaJSON
     {
-        private static string baseUrl = @"https://poe.ninja/api/data/";
-        
-        private static string leagueUrl = @"?league=";
-        private static string typeUrl = @"&type=";
+        private static readonly string baseUrl = @"https://poe.ninja/api/data/";
+        private static readonly string leagueUrl = @"?league=";
+        private static readonly string typeUrl = @"&type=";
 
-        public static string GetUrl(string input, string league) 
-        {
-            return "temp";
-        }
+        private static string GetUrl(string input, string league) =>
+             baseUrl + GetType(input).ToLower() + "overview" + leagueUrl + league + typeUrl + input; // formats query to JSON url for http client later
 
-        public static string GetType(string input)
+        private static string GetType(string input) 
         {
             string type = string.Empty;
             switch (input)
             {
                 case "Currency":
-                    type = "currency";
+                    type = "Currency";
                     break;
 
                 case "Fragment":
-                    type = "currency";
+                    type = "Currency";
                     break;
 
                 default:
-                    type = "item";
+                    type = "Item";
                     break;
             }
             return type;
-        }
+        } // Simple switch for determining if query is an item or currency for link purposes
 
-        public static async Task<string> GetJSON()
+        public static async Task<string> GetJSON(string input, string league)
         {
-            //this would be item here
-            //string fullUrl = baseUrl + "GetDivinationCardsOverview" + leagueUrl + "Ritual";
-            string fullUrl = @"https://poe.ninja/api/data/itemoverview?league=Ritual&type=DivinationCard";
         var httpClient = new HttpClient();
-            var response = await httpClient.GetAsync(fullUrl);
+            var response = await httpClient.GetAsync(GetUrl(input, league));
             string result = await response.Content.ReadAsStringAsync();
         return result;
-        }
+        } // Asyncronously retrieves data from JSON link, 
 
 
 
