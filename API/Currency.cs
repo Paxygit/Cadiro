@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Cadiro.API
 {
-    public class Currency 
+    public class Currency //Wrap all classes to avoid accessibility issues (1/16/21 Dankoter)
     {
         public class Pay
         {

@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
-
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+ 
 namespace Cadiro.API
 {
-    public class DivinationCard
+    public class DivinationCard //Wrap all classes to avoid accessibility issues (1/16/21 Dankoter)
     {
         // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
         public class Sparkline
@@ -10,19 +12,19 @@ namespace Cadiro.API
             public List<object> data { get; set; }
             public double totalChange { get; set; }
         }
-
+ 
         public class LowConfidenceSparkline
         {
             public List<object> data { get; set; }
             public double totalChange { get; set; }
         }
-
+ 
         public class ExplicitModifier
         {
             public string text { get; set; }
             public bool optional { get; set; }
         }
-
+ 
         public class Line
         {
             public int id { get; set; }
@@ -54,17 +56,17 @@ namespace Cadiro.API
             public object mapRegion { get; set; }
             public int listingCount { get; set; }
         }
-
+ 
         public class Translations
         {
         }
-
+ 
         public class Language
         {
             public string name { get; set; }
             public Translations translations { get; set; }
         }
-
+ 
         public class Root
         {
             public List<Line> lines { get; set; }

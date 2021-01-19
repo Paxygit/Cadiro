@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Cadiro.API
 {
-    public class Beasts
+    public class Beasts //Wrap all classes to avoid accessibility issues (1/16/21 Dankoter)
     {
        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
     public class Sparkline    {
