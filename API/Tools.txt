@@ -1,0 +1,5 @@
+﻿https://github.com/5k-mirrors/misc-poe-tools/blob/master/doc/poe-ninja-api.md
+//API Links and general guide
+
+https://json2csharp.com/
+//JSON to class file formatter
