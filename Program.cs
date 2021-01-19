@@ -8,12 +8,23 @@ namespace Cadiro
         [STAThread]
         static void Main(string[] args)
         {
-            string item, league;
-            item = Console.ReadLine();
-            league = Console.ReadLine();
-            DivinationCard.Root divinationCard = JsonConvert.DeserializeObject<DivinationCard.Root>(NinjaJSON.GetJSON(item, league).Result);
-            for (int i = 0; i < divinationCard.lines.Count; i++)
-                Console.WriteLine(divinationCard.lines[i].name + " costs " + divinationCard.lines[i].chaosValue.ToString() + "c.");
+            Debug();
+        }
+
+        private static void Debug()
+        {
+            //string item, league;
+            //Console.WriteLine("Item: ");
+            //item = Console.ReadLine();
+            //Console.WriteLine("\nLeague: ");
+            //league = Console.ReadLine();
+            string item = "Prophecy";
+            string league = "Ritual";
+            Prophecy.Root Prophecys = JsonConvert.DeserializeObject<Prophecy.Root>(NinjaJSON.GetJSON(item, league).Result);
+            for (int i = 0; i < Prophecys.lines.Count; i++)
+                Console.WriteLine(Prophecys.lines[i].name + " costs " + Prophecys.lines[i].chaosValue.ToString() + "c.");
+            Console.WriteLine("\n\n");
+            //Debug();
         }
     }
 }

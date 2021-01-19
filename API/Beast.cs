@@ -2,12 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-
 namespace Cadiro.API
 {
-    public class Prophecies //Wrap all classes to avoid accessibility issues (1/16/21 Dankoter)
+    public class Beast //Wrap all classes to avoid accessibility issues (1/16/21 Dankoter)
     {
-        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
+       // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
     public class Sparkline    {
         public List<object> data { get; set; } 
         public double totalChange { get; set; } 
@@ -24,10 +23,10 @@ namespace Cadiro.API
         public string icon { get; set; } 
         public int mapTier { get; set; } 
         public int levelRequired { get; set; } 
-        public object baseType { get; set; } 
+        public string baseType { get; set; } 
         public int stackSize { get; set; } 
-        public string variant { get; set; } 
-        public string prophecyText { get; set; } 
+        public object variant { get; set; } 
+        public object prophecyText { get; set; } 
         public object artFilename { get; set; } 
         public int links { get; set; } 
         public int itemClass { get; set; } 
@@ -62,6 +61,6 @@ namespace Cadiro.API
         public Language language { get; set; } 
     }
 
-
+ 
     }
 }
