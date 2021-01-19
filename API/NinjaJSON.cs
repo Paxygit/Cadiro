@@ -9,9 +9,34 @@ namespace Cadiro
     public class NinjaJSON
     {
         private static string baseUrl = @"https://poe.ninja/api/data/";
+        
         private static string leagueUrl = @"?league=";
+        private static string typeUrl = @"&type=";
 
+        public static string GetUrl(string input, string league) 
+        {
+            return "temp";
+        }
 
+        public static string GetType(string input)
+        {
+            string type = string.Empty;
+            switch (input)
+            {
+                case "Currency":
+                    type = "currency";
+                    break;
+
+                case "Fragment":
+                    type = "currency";
+                    break;
+
+                default:
+                    type = "item";
+                    break;
+            }
+            return type;
+        }
 
         public static async Task<string> GetJSON()
         {
